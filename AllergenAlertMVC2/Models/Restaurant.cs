@@ -9,6 +9,7 @@ namespace AllergenAlertMVC2.Models
     {
 
         public string Name { get; set; }
+        public Boolean Allergen {get; set;}
         public int ID { get; set; }
         
 
