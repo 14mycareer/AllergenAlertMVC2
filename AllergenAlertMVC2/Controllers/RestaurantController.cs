@@ -49,7 +49,8 @@ namespace AllergenAlertMVC2.Controllers
             {
                 Restaurant newRestaurant = new Restaurant
                 {
-                    Name = addRestaurantViewModel.Name
+                    Name = addRestaurantViewModel.Name,
+                    Allergen = addRestaurantViewModel.Allergen
                 };
                 //adds to database making changes
                 context.Restaurants.Add(newRestaurant);
