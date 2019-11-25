@@ -1,9 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using AllergenAlertMVC2.Models;
-using System.Collections.Generic;
 using AllergenAlertMVC2.ViewModels;
 using AllergenAlertMVC2.Data;
 
@@ -50,7 +48,7 @@ namespace AllergenAlertMVC2.Controllers
                 Restaurant newRestaurant = new Restaurant
                 {
                     Name = addRestaurantViewModel.Name,
-                    Allergen = addRestaurantViewModel.Allergen
+                    NoAllergen = addRestaurantViewModel.NoAllergen
                 };
                 //adds to database making changes
                 context.Restaurants.Add(newRestaurant);
