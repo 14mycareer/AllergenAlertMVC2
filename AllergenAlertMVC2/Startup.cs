@@ -48,9 +48,10 @@ namespace AllergenAlertMVC2
 
             app.UseMvc(routes =>
             {
+                //routes.MapRoute("Restaurant", "Restaurant/{*article}",)
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Restaurant}/{action=Index}/{id?}");
+                    template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
