@@ -1,16 +1,19 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model AllergenAlertMVC2.ViewModels.SelectedAllergenViewModel
 
 
 @{
-    List<SelectListItem> allergenList = new List<SelectListItem>();
-
-    allergenList.Add(new SelectListItem { Text = "Nuts", Value = "0", Selected = true });
+    ViewData["Title"] = "Home Page";
 }
 
-<h1> Select An Allergern</h1>
+<h1>Select an Allergen"</h1>
 
-@Html.DropDownList("Allergens", allergenList, "Select Allergen")
+<form asp.controller="Home" asp.action="Index" method="post">
+
+    <div class="form group">
+        <label asp-for="Allergen"></label>
+        <select asp-for="Allergen" asp-items="Model.AllergenType"></select>
+    </div>
+    <input type="submit" value="Submit" />
+</form>
 
 
