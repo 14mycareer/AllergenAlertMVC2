@@ -6,11 +6,21 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using AllergenAlertMVC2.Models;
 using AllergenAlertMVC2.ViewModels;
+using AllergenAlertMVC2.Data;
 
 namespace AllergenAlertMVC2.Controllers
 {
     public class HomeController : Controller
     {
+        private RestaurantDbContext context;
+
+        //constructor that takes instance of data that is of DbContext type
+        public HomeController(RestaurantDbContext dbContext)
+        {
+            context = dbContext;
+        }
+
+
         public IActionResult Index()
         {
             return View();
@@ -22,7 +32,10 @@ namespace AllergenAlertMVC2.Controllers
             int AllergenID = findRestaurantViewModel.AllergenID;
             ViewData["Message"] = "Your allergen id is."+ AllergenID;
 
-            return View();
+
+            FoundRestaurantViewModel foundRestaurantViewModel = new FoundRestaurantViewModel();
+            foundRestaurantViewModel.Restaurants = context.Restaurants.ToList();
+            return View(foundRestaurantViewModel);
         }
 
 
