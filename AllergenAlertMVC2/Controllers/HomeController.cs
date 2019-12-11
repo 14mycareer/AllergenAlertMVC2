@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using AllergenAlertMVC2.Models;
+using AllergenAlertMVC2.ViewModels;
 
 namespace AllergenAlertMVC2.Controllers
 {
@@ -15,8 +16,12 @@ namespace AllergenAlertMVC2.Controllers
             return View();
         }
 
-        public IActionResult FindRestaurant()
+        //public IActionResult AddRestaurant(AddRestaurantViewModel addRestaurantViewModel)
+        public IActionResult FindRestaurant(FindRestaurantViewModel findRestaurantViewModel)
         {
+            int AllergenID = findRestaurantViewModel.AllergenID;
+            ViewData["Message"] = "Your allergen id is."+ AllergenID;
+
             return View();
         }
 
