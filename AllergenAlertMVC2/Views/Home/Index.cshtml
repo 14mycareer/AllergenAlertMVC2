@@ -6,11 +6,16 @@
 @{
     List<SelectListItem> allergenList = new List<SelectListItem>();
 
-    allergenList.Add(new SelectListItem { Text = "Nuts", Value = "0", Selected = true });
+    allergenList.Add(new SelectListItem { Text = "Nuts", Value = "0",  });
 }
 
-<h1> Select An Allergern</h1>
+<h1> Select An Allergen</h1>
+<form asp-controller="Home" asp-action="FindRestaurant" method="post">
 
-@Html.DropDownList("Allergens", allergenList, "Select Allergen")
+    @Html.DropDownList("Allergens", allergenList, "Select Allergen")
+
+    <input type="submit" value="Find Restaurant" />
 
 
+
+</form>
