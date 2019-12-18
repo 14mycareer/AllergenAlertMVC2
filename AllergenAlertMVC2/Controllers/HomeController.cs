@@ -35,6 +35,8 @@ namespace AllergenAlertMVC2.Controllers
         //public IActionResult AddRestaurant(AddRestaurantViewModel addRestaurantViewModel)
         public IActionResult FindRestaurant(FindRestaurantViewModel findRestaurantViewModel)
         {
+            List<Restaurant> restaurants = context.Restaurants.ToList();
+
             int AllergenID = findRestaurantViewModel.AllergenID;
             ViewData["Message"] = "Your allergen id is"+ AllergenID;
 
@@ -43,13 +45,12 @@ namespace AllergenAlertMVC2.Controllers
 
             //create listing of restaurants that match the selected allergen & with "true" that have allergen free foods
 
-            List<Restaurant> restaurants = context.Restaurants.ToList();
+            
             if (AllergenID == 0)
                 foreach (Restaurant r in restaurants)
                     if (r.NoAllergen == true)
                         foundRestaurantViewModel.Restaurants.Add (r);
 
-            
             return View(foundRestaurantViewModel);
         }
 
