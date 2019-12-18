@@ -13,6 +13,9 @@ namespace AllergenAlertMVC2.Controllers
     public class HomeController : Controller
     {
         private RestaurantDbContext context;
+        private IEnumerable<Restaurant> Restarants;
+
+        public IEnumerable<Restaurant> Restaurants { get; private set; }
 
         //constructor that takes instance of data that is of DbContext type
         public HomeController(RestaurantDbContext dbContext)
@@ -20,21 +23,31 @@ namespace AllergenAlertMVC2.Controllers
             context = dbContext;
         }
 
+        
 
+        //gets/displays dropdownlist
         public IActionResult Index()
         {
             return View();
         }
 
+        //method to find restaurant that matches dropdownlist "value" int
         //public IActionResult AddRestaurant(AddRestaurantViewModel addRestaurantViewModel)
         public IActionResult FindRestaurant(FindRestaurantViewModel findRestaurantViewModel)
         {
             int AllergenID = findRestaurantViewModel.AllergenID;
-            ViewData["Message"] = "Your allergen id is."+ AllergenID;
-
+            ViewData["Message"] = "Your allergen id is"+ AllergenID;
 
             FoundRestaurantViewModel foundRestaurantViewModel = new FoundRestaurantViewModel();
-            foundRestaurantViewModel.Restaurants = context.Restaurants.ToList();
+
+
+            //create listing of restaurants that match the selected allergen & with "true" that have allergen free foods
+            if (AllergenID == 0)
+                foreach (Restaurant r in Restaurants)
+                    if (r.NoAllergen == true)
+                        foundRestaurantViewModel.Restaurants.Add (r);
+
+            
             return View(foundRestaurantViewModel);
         }
 
