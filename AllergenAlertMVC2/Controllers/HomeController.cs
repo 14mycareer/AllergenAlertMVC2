@@ -42,8 +42,10 @@ namespace AllergenAlertMVC2.Controllers
 
 
             //create listing of restaurants that match the selected allergen & with "true" that have allergen free foods
+
+            List<Restaurant> restaurants = context.Restaurants.ToList();
             if (AllergenID == 0)
-                foreach (Restaurant r in Restaurants)
+                foreach (Restaurant r in restaurants)
                     if (r.NoAllergen == true)
                         foundRestaurantViewModel.Restaurants.Add (r);
 
