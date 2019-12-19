@@ -49,7 +49,7 @@ namespace AllergenAlertMVC2.Controllers
             if (AllergenID == 0)
                 foreach (Restaurant r in restaurants)
                     if (r.NoAllergen == true)
-                        foundRestaurantViewModel.Restaurants.Add (r);
+                      foundRestaurantViewModel.Restaurants.Add (r);
 
             return View(foundRestaurantViewModel);
         }
