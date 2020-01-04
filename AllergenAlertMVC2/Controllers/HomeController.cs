@@ -13,9 +13,9 @@ namespace AllergenAlertMVC2.Controllers
     public class HomeController : Controller
     {
         private RestaurantDbContext context;
-        private IEnumerable<Restaurant> Restarants;
+        //private IEnumerable<Restaurant> Restarants;
 
-        public IEnumerable<Restaurant> Restaurants { get; private set; }
+       // public IEnumerable<Restaurant> Restaurants { get; private set; }
 
         //constructor that takes instance of data that is of DbContext type
         public HomeController(RestaurantDbContext dbContext)
@@ -49,7 +49,7 @@ namespace AllergenAlertMVC2.Controllers
             if (AllergenID == 0)
                 foreach (Restaurant r in restaurants)
                     if (r.NoAllergen == true)
-                      foundRestaurantViewModel.Restaurants.Add (r);
+                      foundRestaurantViewModel.Add(r).ToList();
 
             return View(foundRestaurantViewModel);
         }
