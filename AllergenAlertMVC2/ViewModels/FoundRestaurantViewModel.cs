@@ -10,8 +10,12 @@ using AllergenAlertMVC2.Data;
 
 namespace AllergenAlertMVC2.ViewModels
 {
+    
     public class FoundRestaurantViewModel
     {
+        public FoundRestaurantViewModel()
+        // : base(options)
+        { Restaurants = new List<Restaurant>(); }
 
         [Required]
 
