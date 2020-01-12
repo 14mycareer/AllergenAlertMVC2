@@ -54,6 +54,16 @@ namespace AllergenAlertMVC2.Controllers
             return View(foundRestaurantViewModel);
         }
 
+        //method to display details of selected restaurant
+        public IActionResult RestaurantDetails()
+        {
+            ViewData["Message"] = "MADE IT!.";
+
+            return View();
+        }
+
+
+
 
         public IActionResult About()
         {
