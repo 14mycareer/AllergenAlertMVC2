@@ -60,7 +60,9 @@ namespace AllergenAlertMVC2.Controllers
         {
             ViewData["Message"] = "MADE IT!" + restaurantid ;
 
-            return View();
+            Restaurant restaurant = context.Restaurants.Single(r => r.ID == restaurantid);
+
+            return View(restaurant);
             
         }
 
