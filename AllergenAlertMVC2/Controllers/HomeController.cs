@@ -51,6 +51,7 @@ namespace AllergenAlertMVC2.Controllers
                     if (r.NoAllergen == true)
                       foundRestaurantViewModel.Restaurants.Add(r);
 
+                      
             return View(foundRestaurantViewModel);
         }
 
@@ -60,6 +61,7 @@ namespace AllergenAlertMVC2.Controllers
             ViewData["Message"] = "MADE IT!.";
 
             return View();
+            
         }
 
 

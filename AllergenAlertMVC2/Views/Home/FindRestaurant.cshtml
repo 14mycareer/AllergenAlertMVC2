@@ -4,6 +4,7 @@
 @{
 }
 <h3>@ViewData["Message"]</h3>
+OOPS
 
 <table class="table">
 
@@ -13,8 +14,12 @@
     @foreach (var restaurant in Model.Restaurants)
     {
         <tr>
-            <td>@restaurant.Name</td>
-            <td>@restaurant.NoAllergen</td>
+            <td>
+                @Html.ActionLink("restaurant.Name", "RestaurantDetails", "Home")
+                muffin
+
+            </td>
+
         </tr>
 
     }
