@@ -56,9 +56,9 @@ namespace AllergenAlertMVC2.Controllers
         }
 
         //method to display details of selected restaurant
-        public IActionResult RestaurantDetails()
+        public IActionResult RestaurantDetails(int restaurantid)
         {
-            ViewData["Message"] = "MADE IT!.";
+            ViewData["Message"] = "MADE IT!" + restaurantid ;
 
             return View();
             
