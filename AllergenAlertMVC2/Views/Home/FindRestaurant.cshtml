@@ -4,7 +4,7 @@
 @{
 }
 <h3>@ViewData["Message"]</h3>
-OOPS
+
 
 <table class="table">
 
@@ -15,8 +15,8 @@ OOPS
     {
         <tr>
             <td>
-                @Html.ActionLink("restaurant.Name", "RestaurantDetails", "Home")
-                muffin
+                @Html.ActionLink((string) restaurant.Name, "RestaurantDetails", "Home", new { restaurant.ID }, null)
+                
 
             </td>
 
