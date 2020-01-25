@@ -38,7 +38,7 @@ namespace AllergenAlertMVC2.Controllers
             List<Restaurant> restaurants = context.Restaurants.ToList();
 
             int AllergenID = findRestaurantViewModel.AllergenID;
-            ViewData["Message"] = "Your allergen id is"+ AllergenID;
+            ViewData["Message"] = "ALLERGEN FREE RESTAURANTS";
 
             FoundRestaurantViewModel foundRestaurantViewModel = new FoundRestaurantViewModel();
 
@@ -58,7 +58,7 @@ namespace AllergenAlertMVC2.Controllers
         //method to display details of selected restaurant
         public IActionResult RestaurantDetails(int restaurantid)
         {
-            ViewData["Message"] = "MADE IT!" + restaurantid ;
+            ViewData["Message"] = "RESTAURANT DETAILS";
 
             Restaurant restaurant = context.Restaurants.Single(r => r.ID == restaurantid);
 
