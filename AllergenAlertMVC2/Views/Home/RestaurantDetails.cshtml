@@ -1,0 +1,11 @@
+﻿@model AllergenAlertMVC2.Models.Restaurant
+@{
+}
+<h3>@ViewData["Message"]</h3>
+
+<br >@Model.Name <br />
+<br >@Model.Address<br />
+<br />
+<br />
+<a href="https://www.google.com/maps/search/?api=1&query=@Model.Address">VIEW MAP</a>
+@*<br /> <iframe src="https://www.google.com/maps/search/?api=1&query=5200+delmar" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>*@

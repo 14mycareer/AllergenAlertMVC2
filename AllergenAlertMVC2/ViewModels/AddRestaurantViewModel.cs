@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
-using System;
+
 
 
 namespace AllergenAlertMVC2.ViewModels
@@ -13,6 +13,9 @@ namespace AllergenAlertMVC2.ViewModels
         [Required]
         [Display(Name = "Restaurant Name")]
         public string Name { get; set; }
+
+        [Required]
+        public string Address { get; set; }
 
         [Required]
         
