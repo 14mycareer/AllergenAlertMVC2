@@ -14,6 +14,8 @@ namespace AllergenAlertMVC2.ViewModels
         [Display(Name = "Restaurant Name")]
         public string Name { get; set; }
 
+        public string Address { get; set; }
+
         [Required]
         
         public Boolean NoAllergen { get; set; }
