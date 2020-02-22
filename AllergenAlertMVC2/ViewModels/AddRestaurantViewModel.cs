@@ -21,6 +21,8 @@ namespace AllergenAlertMVC2.ViewModels
         
         public Boolean NoAllergen { get; set; }
 
+        public string Phone { get; set; }
+
 
     }
 }
