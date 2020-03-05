@@ -1,0 +1,2 @@
+﻿ALTER TABLE Restaurants
+ADD Dairy BIT DEFAULT 0 NOT NULL;

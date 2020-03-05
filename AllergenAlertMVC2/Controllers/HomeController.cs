@@ -52,6 +52,8 @@ namespace AllergenAlertMVC2.Controllers
                       foundRestaurantViewModel.Restaurants.Add(r);
                    else if (r.Dairy == true)
                       foundRestaurantViewModel.Restaurants.Add(r);
+                   else if (r.Soy == true)
+                        foundRestaurantViewModel.Restaurants.Add(r);
 
 
             return View(foundRestaurantViewModel);

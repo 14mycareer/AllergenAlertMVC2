@@ -21,6 +21,7 @@ namespace AllergenAlertMVC2.ViewModels
         
         public Boolean Nuts { get; set; }
         public Boolean Dairy { get; set; }
+        public Boolean Soy { get; set; }
 
 
     }
