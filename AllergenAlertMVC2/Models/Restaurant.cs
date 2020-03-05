@@ -12,8 +12,9 @@ namespace AllergenAlertMVC2.Models
         public Boolean Nuts {get; set;}
         public int ID { get; set; }
         public string Address { get; set; }
-        
+        public Boolean Dairy { get; set; }
 
-              
+
+
     }
 }

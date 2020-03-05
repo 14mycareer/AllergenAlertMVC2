@@ -49,7 +49,8 @@ namespace AllergenAlertMVC2.Controllers
                 {
                     Name = addRestaurantViewModel.Name,
                     Address = addRestaurantViewModel.Address,
-                    Nuts = addRestaurantViewModel.Nuts
+                    Nuts = addRestaurantViewModel.Nuts,
+                    Dairy = addRestaurantViewModel.Dairy
                 };
                 //adds to database making changes
                 context.Restaurants.Add(newRestaurant);
